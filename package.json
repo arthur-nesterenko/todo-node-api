@@ -5,7 +5,9 @@
   "scripts": {
     "setup": "prisma generate && prisma migrate deploy && prisma db seed && npm run generate:nexus",
     "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js",
+    "start": "node dist/index",
+    "clean": "rm -rf dist",
+    "build": "npm -s run clean && npm -s run setup && tsc",
     "lint": "eslint ./ --ext .js,.ts, --ignore-path .gitignore",
     "dev": "ts-node-dev --transpile-only src/index.ts",
     "prettify": "yarn prettier --write './**/*.{js,ts}'",
@@ -17,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.15.1",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
@@ -39,6 +43,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
+    "jsonwebtoken": "^9.0.0",
     "nexus": "^1.3.0"
   },
   "prisma": {
