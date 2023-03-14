@@ -5,27 +5,51 @@
     "plugin:typescript-sort-keys/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "unicorn"],
+  "plugins": [
+    "@typescript-eslint",
+    "unicorn"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
       "rules": {
+        "node/no-unsupported-features/es-syntax": "off",
+        "node/no-missing-import": "off",
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-shadow": [
+          "error"
+        ],
         "@typescript-eslint/no-explicit-any": [
           "error",
-          { "fixToUnknown": true, "ignoreRestArgs": true }
+          {
+            "fixToUnknown": true,
+            "ignoreRestArgs": true
+          }
         ],
         "sort-keys": [
           "error",
           "asc",
-          { "caseSensitive": true, "natural": true, "minKeys": 2 }
+          {
+            "caseSensitive": true,
+            "natural": true,
+            "minKeys": 2
+          }
         ],
         "no-shadow": "off",
         "no-undef": "off",
-        "no-console": ["error"],
-        "camelcase": [2, { "properties": "always" }],
+        "no-console": [
+          "error"
+        ],
+        "camelcase": [
+          2,
+          {
+            "properties": "always"
+          }
+        ],
         "unicorn/filename-case": [
           "error",
           {
